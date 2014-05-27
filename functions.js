@@ -3,7 +3,16 @@ function generateNumber(){
 	return a;
 }
 
-function writeQuestion (){
-	var x = generateNumber() + "*" + generateNumber() ;
+function writeQuestion(){
+	var a = generateNumber() ;
+	var b = generateNumber() ;
+	var x = a + "*" + b ;
  	document.getElementById("question").innerHTML = x;
+ 	return a*b;
+}
+
+function answersQuestion(){
+	var rightAnswer = writeQuestion();
+	document.getElementById("answers").innerHTML = rightAnswer;
+
 }
