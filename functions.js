@@ -12,7 +12,23 @@ function writeQuestion(){
 }
 
 function answersQuestion(){
+
 	var rightAnswer = writeQuestion();
-	document.getElementById("answers").innerHTML = rightAnswer;
+
+	var respostas = [3];
+
+	for(var i=0;i<4;i++){
+
+		respostas[i]=generateNumber();
+	}
+
+	var posicaoCerta = Math.floor((Math.random() * 10)%4)
+	respostas[posicaoCerta] = rightAnswer;
+
+	for(var i=0;i<4;i++){
+
+		document.getElementById(Math.floor(i)).innerHTML = respostas[i];
+	}
+
 
 }
