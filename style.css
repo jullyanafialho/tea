@@ -1,5 +1,5 @@
 
-.botoes {
+.buttons {
 
 	min-width: 55px;
 	min-height: 35px;
@@ -22,7 +22,7 @@
 
 }
 
-#tela {
+#screen {
 	padding:25px;
 	margin:0 auto;
 	text-align: center;

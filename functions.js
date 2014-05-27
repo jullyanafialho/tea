@@ -15,19 +15,19 @@ function answersQuestion(){
 
 	var rightAnswer = writeQuestion();
 
-	var respostas = [3];
+	var answers = [3];
 
 	for(var i=0;i<4;i++){
 
-		respostas[i]=generateNumber();
+		answers[i]=generateNumber();
 	}
 
-	var posicaoCerta = Math.floor((Math.random() * 10)%4)
-	respostas[posicaoCerta] = rightAnswer;
+	var rightPosition = Math.floor((Math.random() * 10)%4)
+	answers[rightPosition] = rightAnswer;
 
 	for(var i=0;i<4;i++){
 
-		document.getElementById(Math.floor(i)).innerHTML = respostas[i];
+		document.getElementById(Math.floor(i)).innerHTML = answers[i];
 	}
 
 
