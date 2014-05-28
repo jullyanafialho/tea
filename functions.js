@@ -1,5 +1,6 @@
 var rightAnswerId = -1;
 var correctAnswers = 0;
+var points = 0;
 
 function generateNumber(){
 
@@ -39,11 +40,12 @@ function writeQuestion(){
 
 	var a = generateNumber() ;
 	var b = generateNumber() ;
-	var x = a + "*" + b ;
+	var x = a + " * " + b ;
  	document.getElementById("question").innerHTML = x;
  	return a*b;
 	
 }
+
 
 function answersQuestion(){
 
@@ -78,4 +80,26 @@ function onOptionClick(id){
 	}  
 
 }
- 
+var userSeconds = prompt("How many seconds?");
+var seconds = userSeconds;
+function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;  
+    }
+    document.getElementById('clock').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+		calcPoints();
+        clearInterval(countdownTimer);
+        document.getElementById('clock').innerHTML = "0:00";
+    } else {
+        seconds--;
+    }
+}
+var countdownTimer = setInterval('secondPassed()', 1000);
+
+var calcPoints = function(){
+	points = Math.round(((correctAnswers/userSeconds)*correctAnswers)*100);
+	alert('Points ' + points);
+}
