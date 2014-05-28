@@ -3,11 +3,16 @@
     <!-- Pull the engine from the Quintus CDN or load it locally -->
     <!-- (use quintus-all.min.js for production) -->
     <script src='functions.js'></script>
+	<span id="countdown" class="timer"></span>
+<script>
+
+</script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head >
    <body onLoad="answersQuestion()">
       
       <div id="screen">
+		<div id="clock"></div>
         <div id="question"></div>
         <div>Answer:</div>
         <div class="buttons" id="0" onclick="onOptionClick(id)"></div>
